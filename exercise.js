@@ -7,11 +7,12 @@ class Person {
   }
 
   static fromJson(json) {
-    return JSON.parse(json);
+    const newObj = JSON.parse(json);
+    return new Person(newObj.id, newObj.firstName, newObj.lastName, newObj.age);
   }
   
-  static toJson(json) {
-    return JSON.stringify(json);
+  static toJson(obj) {
+    return JSON.stringify(obj);
   }
 }
 
